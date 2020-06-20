@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="330dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/toprofile"
+        android:src="@drawable/user2" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lucida"
+        android:text="@string/app_name"
+        android:textColor="@color/Ash"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="135dp"
+        android:textSize="35dp"
+        />
+
+</RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="8dp"
+    android:background="@drawable/bgwallet">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello!"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:layout_marginHorizontal="150dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/hello"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Name"
+        android:textColor="#fff"
+        android:layout_below="@id/hello"
+        android:layout_marginHorizontal="100dp"
+        android:textSize="30dp"
+        android:fontFamily="@font/lucida"
+        android:id="@+id/displayName"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance"
+        android:textColor="#fff"
+        android:layout_below="@id/displayName"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lucida"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 00"
+        android:textColor="#fff"
+        android:layout_below="@id/displayName"
+        android:layout_marginHorizontal="320dp"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lucida"
+        android:id="@+id/displayBalance"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonus"
+        android:textColor="#fff"
+        android:layout_below="@id/displayName"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="60dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lucida"
+        android:id="@+id/nameBonus"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonus"
+        android:textColor="#fff"
+        android:layout_below="@id/displayName"
+        android:layout_marginHorizontal="320dp"
+        android:layout_marginTop="60dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lucida"
+        android:id="@+id/displayBonus"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Balance"
+        android:textColor="#fff"
+        android:layout_below="@id/nameBonus"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lucida"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 000"
+        android:textColor="#fff"
+        android:layout_below="@id/displayBonus"
+        android:layout_marginHorizontal="315dp"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lucida"
+        android:id="@+id/displayTotal"
+        />
+
+</RelativeLayout>
+
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="  Buy Ticket"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/toTicket"
+            android:background="@drawable/whitebg"
+            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+            android:drawableStart="@drawable/ic_receipt_black_24dp"
+            android:drawableLeft="@drawable/ic_receipt_black_24dp"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="15dp"
+            android:text="Train Schedule"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/toschedule"
+            android:layout_below="@id/toTicket"
+            android:background="@drawable/whitebg"
+            android:drawableStart="@drawable/ic_schedule_black_24dp"
+            android:drawableLeft="@drawable/ic_schedule_black_24dp"
+            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="15dp"
+            android:text="E-wallet"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/towallet"
+            android:layout_below="@id/toschedule"
+            android:background="@drawable/whitebg"
+            android:drawableStart="@drawable/ic_account_balance_wallet_black_24dp"
+            android:drawableLeft="@drawable/ic_account_balance_wallet_black_24dp"
+            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/whitebg"
+            android:text="Help"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/tohelp"
+            android:layout_below="@id/towallet"
+            android:drawableStart="@drawable/ic_help_outline_black_24dp"
+            android:drawableLeft="@drawable/ic_help_outline_black_24dp"
+            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

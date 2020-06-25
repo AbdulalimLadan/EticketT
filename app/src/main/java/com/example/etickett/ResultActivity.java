@@ -55,6 +55,8 @@ TextView fromResult, toResult,DateResult,theclass,personresult;
                 .setQuery(query,Ticket.class)
                 .build();
 
+Log.I("TAG", "options count " + options.size());
+
          adapter = new FirestoreRecyclerAdapter<Ticket, TicketViewHolder>(options) {
             @NonNull
             @Override
@@ -65,6 +67,8 @@ TextView fromResult, toResult,DateResult,theclass,personresult;
 
             @Override
             protected void onBindViewHolder(@NonNull TicketViewHolder holder, int position, @NonNull Ticket model) {
+                Log.I("TAG", " 1 model price " + options.get(position).getPrice());
+                Log.I("TAG", " 100 model price " + model.getPrice());
                 holder.prices.setText(model.getPrice());
                 holder.theclassdb.setText(model.getdClasstype());
                 holder.TimeArrival.setText(model.getArrivalTime());
@@ -74,6 +78,7 @@ TextView fromResult, toResult,DateResult,theclass,personresult;
 
          recyclerView.setHasFixedSize(true);
          recyclerView.setLayoutManager(new LinearLayoutManager(this));
+         //adapter.notifyDataSetChanged();
          recyclerView.setAdapter(adapter);
 
 

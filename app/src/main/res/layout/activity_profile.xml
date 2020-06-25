@@ -12,6 +12,16 @@
         android:layout_height="280dp"
         android:background="@color/Pink">
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:tint="#fff"
+            android:layout_marginTop="15dp"
+            android:id="@+id/goback"
+            android:layout_marginHorizontal="10dp"
+            />
+
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/propix"
@@ -47,7 +57,18 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Tickets"
+            android:id="@+id/previousTicket"
+            android:textAlignment="viewStart"
+            android:gravity="start"
+            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+            android:drawableRight="@drawable/ic_navigate_next_black_24dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Logot"
+            android:layout_below="@+id/previousTicket"
             android:id="@+id/logout"
             android:textAlignment="viewStart"
             android:gravity="start"

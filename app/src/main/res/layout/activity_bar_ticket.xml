@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Pink"
+    android:orientation="vertical"
+    tools:context=".BarTicketActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Pink" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+        android:tint="#fff"
+        android:id="@+id/backkTo"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Ticket"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lucida"
+        android:textColor="#fff"
+        android:layout_marginHorizontal="120dp"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="630dp"
+        android:background="@color/Pink" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tickks"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:id="@+id/ticketFrom"
+            android:layout_marginTop="200dp"
+            android:layout_marginHorizontal="45dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:id="@+id/ticketTo"
+            android:layout_marginTop="200dp"
+            android:layout_marginHorizontal="280dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:id="@+id/ticketTime"
+            android:layout_below="@+id/ticketTo"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="43dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:layout_below="@+id/ticketTo"
+            android:id="@+id/ticketArr"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="280dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:layout_below="@+id/ticketTime"
+            android:id="@+id/ticketclass"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="43dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:layout_below="@+id/ticketArr"
+            android:id="@+id/ticketSeat"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="280dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:layout_below="@+id/ticketclass"
+            android:id="@+id/ticketNmber"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="43dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texthere"
+            android:layout_below="@+id/ticketSeat"
+            android:id="@+id/ticketName"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="280dp"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ticketNmber"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="50dp"
+            android:text="Barcorde here"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

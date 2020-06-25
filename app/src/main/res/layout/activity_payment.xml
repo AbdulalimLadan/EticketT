@@ -6,11 +6,211 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PaymentActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="330dp"
+        android:background="@color/Pink">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:tint="#fff"
+            android:id="@+id/backk"
+            android:layout_marginTop="20dp"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lucida"
+        android:textColor="#fff"
+        android:layout_marginHorizontal="148dp"
+        />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backk"
+        android:text="From"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:id="@+id/desFrom"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        />
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/backk"
+         android:layout_marginTop="25dp"
+         android:src="@drawable/next1"
+         android:layout_marginHorizontal="175dp"
+         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/backk"
+            android:text="TO"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:id="@+id/ArrTo"
+            android:layout_marginHorizontal="310dp"
+            android:layout_marginTop="40dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_date_range_black_24dp"
+            android:layout_below="@+id/desFrom"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="40dp"
+            android:tint="#fff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desFrom"
+            android:layout_marginTop="35dp"
+            android:text="Date"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:id="@+id/dateDisplay"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="60dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/timee"
+            android:layout_below="@+id/ArrTo"
+            android:layout_marginHorizontal="280dp"
+            android:layout_marginTop="40dp"
+            android:tint="#fff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desFrom"
+            android:layout_marginTop="35dp"
+            android:text="Time"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:id="@+id/timeDisplay"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="310dp"
+            />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seat4"
+            android:layout_below="@+id/dateDisplay"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:tint="#fff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateDisplay"
+            android:layout_marginTop="25dp"
+            android:text="selected seat"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/SeatDisplay"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="60dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/SeatDisplay"
+            android:backgroundTint="#fff"
+            android:hint="Enter Name"
+            android:textColorHint="#fff"
+
+            />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay with E-wallet"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/lucida"
+            android:layout_marginHorizontal="30dp"
+            android:id="@+id/text1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:text="Available Balance"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/text2"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:text="N 1000"
+            android:id="@+id/displaywallet"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            android:layout_marginHorizontal="300dp"
+            android:textStyle="bold"
+            android:textColor="@color/Pink"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text2"
+            android:text="Price Amount"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displaywallet"
+            android:text="N 100"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            android:layout_marginHorizontal="300dp"
+            android:textStyle="bold"
+            android:textColor="@color/Pink"
+            android:id="@+id/displayamount"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/displayamount"
+            android:layout_marginHorizontal="290dp"
+            android:text="Pay Now"
+            android:textStyle="bold"
+            android:fontFamily="@font/lucida"
+            android:background="@drawable/btbg"
+            android:textColor="#fff"
+            />
+    </RelativeLayout>
+
+
 </LinearLayout>

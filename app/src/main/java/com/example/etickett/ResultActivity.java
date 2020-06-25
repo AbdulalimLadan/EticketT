@@ -1,12 +1,15 @@
 package com.example.etickett;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,13 +24,13 @@ import java.util.Date;
 
 //displays results based on the search.
 public class ResultActivity extends AppCompatActivity {
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference ticketRef = db.collection("Tickets");
-    private  TicketAdapter adapter;
-    private TicketAdapter.TicketHolder tk;
+    private FirebaseFirestore firebaseFirestore;
+    //private CollectionReference ticketRef = db.collection("Tickets");
+    //private  TicketAdapter adapter;
     RecyclerView recyclerView;
+    private FirestoreRecyclerAdapter adapter;
 ImageView back;
-TextView fromResult, toResult,DateResult,prices,TimeDeparture,TimeArrival,theclass,personresult;
+TextView fromResult, toResult,DateResult,theclass,personresult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,38 @@ TextView fromResult, toResult,DateResult,prices,TimeDeparture,TimeArrival,thecla
         //TimeArrival = (TextView) findViewById(R.id.TimeArrival);
         theclass = (TextView) findViewById(R.id.theclass);
         personresult = (TextView) findViewById(R.id.personresult);
+
+        recyclerView = (RecyclerView)findViewById(R.id.recycle);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        //Query
+        Query query = firebaseFirestore.collection("Tickets");
+        //RecyclerOptions
+        FirestoreRecyclerOptions<Ticket> options = new FirestoreRecyclerOptions.Builder<Ticket>()
+                .setQuery(query,Ticket.class)
+                .build();
+
+         adapter = new FirestoreRecyclerAdapter<Ticket, TicketViewHolder>(options) {
+            @NonNull
+            @Override
+            public TicketViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_items,parent,false);
+                return new TicketViewHolder(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull TicketViewHolder holder, int position, @NonNull Ticket model) {
+                holder.prices.setText(model.getPrice());
+                holder.theclassdb.setText(model.getdClasstype());
+                holder.TimeArrival.setText(model.getArrivalTime());
+                holder.TimeDeparture.setText(model.getDepartureTime());
+            }
+        };
+
+         recyclerView.setHasFixedSize(true);
+         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+         recyclerView.setAdapter(adapter);
+
 
         Bundle bundle = getIntent().getExtras();
         String dep = bundle.get("Departure").toString();
@@ -57,16 +92,16 @@ TextView fromResult, toResult,DateResult,prices,TimeDeparture,TimeArrival,thecla
 
         // for recycler view using the classs type to search
 
-        Query query = ticketRef.whereEqualTo("dClasstype", cls);
-        FirestoreRecyclerOptions<Ticket> options = new FirestoreRecyclerOptions.Builder<Ticket>()
-               // .setQuery(query, Ticket.class)
-                .setQuery(query, Ticket.class)
-                .build();
-        adapter = new TicketAdapter(options);
-        recyclerView = (RecyclerView)findViewById(R.id.recycle);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+//        Query query = ticketRef.orderBy("Tickets");
+//        FirestoreRecyclerOptions<Ticket> options = new FirestoreRecyclerOptions.Builder<Ticket>()
+//               // .setQuery(query, Ticket.class)
+//                .setQuery(query, Ticket.class)
+//                .build();
+//        adapter = new TicketAdapter(options);
+//        recyclerView = (RecyclerView)findViewById(R.id.recycle);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setAdapter(adapter);
 
 
         //go back
@@ -78,23 +113,33 @@ TextView fromResult, toResult,DateResult,prices,TimeDeparture,TimeArrival,thecla
             }
         });
     }
-        @Override
-        protected  void onStart()
-        {
-            super.onStart();
-            adapter.startListening();
-        }
 
+
+    private class TicketViewHolder  extends RecyclerView.ViewHolder{
+        private TextView prices;
+        private TextView TimeDeparture;
+        private TextView TimeArrival;
+        private TextView theclassdb;
+
+        public TicketViewHolder(@NonNull View itemView) {
+            super(itemView);
+            prices = itemView.findViewById(R.id.prices);
+            TimeDeparture = itemView.findViewById(R.id.TimeDeparture);
+            TimeArrival = itemView.findViewById(R.id.TimeArrival);
+            theclassdb = itemView.findViewById(R.id.theclassdb);
+
+        }
+    }
     @Override
-    protected  void onStop()
-    {
+    protected void onStop() {
         super.onStop();
         adapter.stopListening();
     }
-
-
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
     }
+}
 
 
